@@ -26,7 +26,8 @@ Update affected documentation and record the actual validation performed.
 Review `git status --short` and the complete diff before committing. Keep generated
 executables, ZIP archives, `.local-work`, settings, and environment files out of Git.
 The source, tests, icon, previews, license, and documentation belong in the repository.
-There is no publishing automation; configure the intended remote before pushing.
+Executable releases are published manually. The landing page has a GitHub Pages
+workflow; see [WEBSITE.md](WEBSITE.md) for website checks and deployment setup.
 
 ## Preparing an executable release
 

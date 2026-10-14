@@ -19,6 +19,14 @@ with Python, Tkinter, and the native Windows network-counter API.
 
 Screenshots show sample traffic values. Windows display scaling affects physical size.
 
+## Website
+
+The dedicated landing page lives in [site/](site/), with an interactive Mini
+widget preview, dark/light themes, screenshots, and source-download instructions.
+See [WEBSITE.md](WEBSITE.md) for local preview, checks, and GitHub Pages setup.
+The Pages workflow publishes only the website files after Pages is enabled and
+the changes are pushed to `main`.
+
 ## Run from source
 
 Requires Windows 10/11 x64 and Python 3.10+ with Tcl/Tk installed. The app uses
@@ -86,6 +94,9 @@ The result is `source/dist/NetPulse.exe`. See [development notes](source/BUILDIN
 | --- | --- |
 | `source/` | App code, icon, tests, and implementation notes |
 | `previews/` | Screenshots of the working app with sample readings |
+| `site/` | Static GitHub Pages landing page and its assets |
+| `tests/` | Website regression tests, separate from app tests |
+| `.github/workflows/pages.yml` | GitHub Pages deployment workflow |
 | `README.txt` | Portable app user guide |
 | `requirements-dev.txt` | Pinned lint and packaging tools |
 
