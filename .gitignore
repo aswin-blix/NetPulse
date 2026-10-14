@@ -1,0 +1,32 @@
+# Python and developer environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ruff_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+*.egg-info/
+
+# Generated builds and portable release archives
+build/
+dist/
+*.spec
+*.exe
+*.zip
+/releases/
+
+# Preserved local experiments, configuration and editor state
+/.local-work/
+.env
+.env.*
+!.env.example
+settings.json
+settings.tmp
+*.log
+.idea/
+.vscode/
+.keep
+Thumbs.db
+Desktop.ini

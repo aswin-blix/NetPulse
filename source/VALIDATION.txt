@@ -1,0 +1,50 @@
+NetPulse 1.0 validation — 4 October 2026
+
+Completed on Windows 11 x64 with Python 3.12.14, Tcl/Tk 8.6.12,
+PyInstaller 6.22.3 and Ruff 0.16.10.
+
+PASS: 71 automated tests.
+- 29 counter, adapter, native structure/error handling and number-format tests.
+- 27 settings validation, atomic persistence and screen-placement tests.
+- 15 Tk integration tests, including the settings icon's mouse bindings,
+  combobox theme changes, dragging, transparency, always-on-top, menu cleanup,
+  high-rate text spacing, missing adapters and counter-error recovery.
+  Mini mode additionally verifies the header-free 38-pixel layout, right-click
+  settings access, size switching and dragging within the shorter window.
+  Corner-radius checks cover validated values, legacy preferences, persistence,
+  reset defaults, the actual slider callback, and native square/rounded regions
+  across all three sizes.
+
+PASS: Ruff lint and formatting checks; no third-party runtime dependency.
+PASS: Live Windows counters read successfully; physical Wi-Fi selected without
+duplicate virtual/filter layers.
+PASS: Actual app window screenshots inspected for dark, light, mini and settings.
+PASS: The original packaged EXE started without an installed Python dependency,
+displayed live counter values, closed cleanly and saved its test preferences.
+No Python/Tcl environment overrides were supplied to that lifecycle test.
+PASS: The smaller Mini rebuild passed compilation and executable checksum verification.
+After the previous instance exited, the rebuilt EXE launched with a verified
+226 x 38 client area, displayed live values, closed cleanly and saved preferences.
+The updated Mini layout and interaction bindings also passed the source UI tests
+and visual inspection. The single-instance guard prevented a duplicate widget
+while the previous copy was still running.
+PASS: The corner-radius rebuild launched with a custom 7-pixel radius. The
+actual native window region was checked (including square/rounded edge points),
+and the chosen radius remained saved after a clean exit. Its executable checksum
+matches the completed build. The settings panel and 0/24-pixel previews were
+rendered and inspected.
+
+Test-method note:
+The packaged input probe using raw Win32 mouse messages was unsuitable for Tk:
+Tk reads GetKeyState for mouse-button transitions, which those messages do not
+change. This was reproduced in a minimal independent Tk window and confirmed
+against Tk's source. Input bindings were verified with Tk event_generate.
+Packaged lifecycle checks were performed against the real executable.
+
+Not physically exercised: unplugging hardware/VPNs, sleep/resume, Windows 10,
+mixed-DPI multi-monitor setups, screen readers, or another user's computer.
+Adapter changes, resets, long pauses and multi-monitor coordinates have
+deterministic automated coverage. See BUILDING.txt for scope limitations.
+
+Preview screenshots use sample traffic values. They are captures of the
+working app, not performance measurements or promises of connection speed.
